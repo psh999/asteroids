@@ -1,5 +1,7 @@
 import pygame
 
+from constants import LINE_WIDTH
+
 # Base class for game objects 
 class CircleShape(pygame.sprite.Sprite):
     def __init__(self, x, y, radius):
@@ -13,7 +15,8 @@ class CircleShape(pygame.sprite.Sprite):
         self.radius = radius 
 
     def draw(self, screen):
-        pass
+        a, b, c = self.triangle()
+        pygame.draw.polygon(screen, "white", [a,b,c], LINE_WIDTH)
 
     def update(self, dt):
         pass
